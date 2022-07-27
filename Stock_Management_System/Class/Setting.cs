@@ -25,7 +25,7 @@ namespace Stock_Management_System.Class
             }
             catch (Exception ex)
             {
-                CONNECTION_TEXT = ex.Message;
+                CONNECTION_TEXT ="ការភ្ជាប់ទៅកាន់ម៉ាស៊ីនមេបរាជ័យ!\n"+ ex.Message;
             }
             finally
             {

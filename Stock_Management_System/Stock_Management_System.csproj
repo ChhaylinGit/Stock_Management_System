@@ -47,8 +47,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,8 +68,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Config.cs" />
     <Compile Include="Class\Msg.cs" />
     <Compile Include="Class\Setting.cs" />
+    <Compile Include="Configure\frmConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configure\frmConnection.Designer.cs">
+      <DependentUpon>frmConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Category.cs">
+      <DependentUpon>StockModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Product.cs">
+      <DependentUpon>StockModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ProductNote.cs">
+      <DependentUpon>StockModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Stock.cs">
+      <DependentUpon>StockModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\StockModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\StockModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\StockModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StockModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Supplier.cs">
+      <DependentUpon>StockModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIDesign\frmBrowseDB.cs">
@@ -75,6 +121,9 @@
     <Compile Include="UIDesign\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Configure\frmConnection.resx">
+      <DependentUpon>frmConnection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +139,14 @@
     <EmbeddedResource Include="UIDesign\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Entity\StockModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StockModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\StockModel.edmx.diagram">
+      <DependentUpon>StockModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +171,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\StockModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StockModel.Context.cs</LastGenOutput>
+      <DependentUpon>StockModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\StockModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StockModel.edmx</DependentUpon>
+      <LastGenOutput>StockModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

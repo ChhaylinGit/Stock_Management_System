@@ -1,9 +1,7 @@
 ﻿using Stock_Management_System.Class;
+using Stock_Management_System.Configure;
 using Stock_Management_System.UIDesign;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Stock_Management_System
@@ -26,7 +24,7 @@ namespace Stock_Management_System
             else 
             {
                 Msg.Error(Setting.CONNECTION_TEXT);
-                new frmBrowseDB().ShowDialog(); 
+                new frmConnection().ShowDialog(); 
             }
         }
     }
