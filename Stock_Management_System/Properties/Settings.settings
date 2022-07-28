@@ -2,7 +2,16 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Stock_Management_System.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="path" Type="System.String" Scope="User">
+    <Setting Name="SERVERNAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DATABASE" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="USERNAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="PASSWORD" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

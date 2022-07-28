@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Config.cs" />
+    <Compile Include="Class\GlobalEntities.cs" />
     <Compile Include="Class\Msg.cs" />
     <Compile Include="Class\Setting.cs" />
     <Compile Include="Configure\frmConnection.cs">
@@ -132,6 +133,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UIDesign\frmBrowseDB.resx">
       <DependentUpon>frmBrowseDB.cs</DependentUpon>
@@ -183,6 +185,9 @@
       <DependentUpon>StockModel.edmx</DependentUpon>
       <LastGenOutput>StockModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\connection_24px.png" />
+    <None Include="Resources\cancel_24px.png" />
+    <None Include="Resources\save_16px.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

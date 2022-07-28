@@ -22,7 +22,7 @@ namespace Stock_Management_System.UIDesign
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            this.Text = "Connection Successful !! - "+ Properties.Settings.Default.path;
+            this.Text = "Connection Successful !! - "+ Properties.Settings.Default.SERVERNAME;
         }
     }
 }

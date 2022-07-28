@@ -14,16 +14,18 @@ namespace Stock_Management_System
         [STAThread]
         static void Main()
         {
-            string DB_PATH = Properties.Settings.Default.path.Trim();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (Setting.ConnectionSuccess(DB_PATH))
+            if (Config.ConnectionSuccess())
             {
-                Application.Run(new frmMain());
+                if (Config.existDatabase())
+                {
+                    Application.Run(new frmMain());
+                }
+                else { new frmConnection().ShowDialog(); }
             }
             else 
             {
-                Msg.Error(Setting.CONNECTION_TEXT);
                 new frmConnection().ShowDialog(); 
             }
         }

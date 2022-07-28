@@ -15,7 +15,7 @@ namespace Stock_Management_System.Entity
     
     public partial class DBStockEntities : DbContext
     {
-        public DBStockEntities()
+        public DBStockEntities(string v)
             : base("name=DBStockEntities")
         {
         }

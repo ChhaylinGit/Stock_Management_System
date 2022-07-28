@@ -34,7 +34,7 @@ namespace Stock_Management_System.UIDesign
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.path = txtDbPath.Text.Trim();
+            Properties.Settings.Default.SERVERNAME = txtDbPath.Text.Trim();
             Properties.Settings.Default.Save();
             Msg.Information(Msg.OPERATION_SUCCESS);
             this.Hide();
@@ -46,15 +46,15 @@ namespace Stock_Management_System.UIDesign
 
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
-            if (Setting.ConnectionSuccess(txtDbPath.Text.Trim())) 
-            {
-                Msg.Information(Setting.CONNECTION_TEXT);
-                btnSave.Enabled = true;
-            } 
-            else 
-            {
-                Msg.Error(Setting.CONNECTION_TEXT);
-            }
+            //if (Setting.ConnectionSuccess(txtDbPath.Text.Trim())) 
+            //{
+            //    Msg.Information(Setting.CONNECTION_TEXT);
+            //    btnSave.Enabled = true;
+            //} 
+            //else 
+            //{
+            //    Msg.Error(Setting.CONNECTION_TEXT);
+            //}
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
